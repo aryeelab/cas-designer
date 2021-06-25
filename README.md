@@ -40,8 +40,13 @@ sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 #################
 ssh ma695@erisxdl.partners.org
 
+podman pull nvcr.io/nvidia/cuda:11.0-base
 podman pull nvcr.io/nvidia/opencl:runtime-ubuntu18.04
 podman images 
+
+podman run --rm -it nvcr.io/nvidia/cuda:11.0-base nvidia-smi
+
+
 podman run --rm -it nvidia/opencl:runtime-ubuntu18.04 /bin/bash
 
 

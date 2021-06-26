@@ -3,7 +3,8 @@ FROM nvidia/cuda:11.3.1-base
 # Misc dependencies
 RUN   apt-get update &&\
       apt-get install -y wget curl python3.8 libgomp1 &&\
-      rm -rf /var/lib/apt/lists/*
+      rm -rf /var/lib/apt/lists/* &&\
+      ln -s /usr/bin/python3 /usr/bin/python # For cas-designer
 
 # Install OpenCL 
 # See https://gitlab.com/nvidia/container-images/opencl/-/blob/ubuntu16.04/runtime/Dockerfile

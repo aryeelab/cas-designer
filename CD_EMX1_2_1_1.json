@@ -1,0 +1,11 @@
+{
+  "w.cas_designer.target_name": "EMX1",
+  "w.cas_designer.target_sequence": "GAGTCCGAGCAGAAGAAGAAGGG",
+  "w.cas_designer.genome": "gs://genomics-public-data/references/hg19",
+  "w.cas_designer.target_length": "20",
+  "w.cas_designer.pam": "GGG",
+  "w.cas_designer.pam_target": "NNN",
+  "w.cas_designer.num_mismatches": "2",
+  "w.cas_designer.dna_bulge_size": "1",
+  "w.cas_designer.rna_bulge_size": "1"
+}

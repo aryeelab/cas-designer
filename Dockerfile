@@ -1,4 +1,5 @@
-FROM nvidia/cuda:11.3.1-base 
+FROM nvidia/cuda:11.3.1-base
+ARG VERSION=__specify_in_build_arg__ 
 
 # Misc dependencies
 RUN   apt-get update &&\
@@ -37,3 +38,6 @@ RUN   echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://package
       apt-get update &&\
       apt-get -y install google-cloud-sdk &&\
       rm -rf /var/lib/apt/lists/*
+      
+# Bake the version number into the image
+RUN echo $VERSION > /VERSION

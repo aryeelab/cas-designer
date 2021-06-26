@@ -54,7 +54,7 @@ task cas_designer {
   >>>
   
   runtime {
-      docker: "gcr.io/aryeelab/cas-designer"
+      docker: "gcr.io/joung-pipelines/cas-designer"
       memory: "15G"
       gpuType: "nvidia-tesla-k80"
       gpuCount: 1

@@ -1,4 +1,5 @@
 {
+  "cas_designer.off_target_search.target_id": "EMX1_2_1_1",
   "cas_designer.off_target_search.target_name": "EMX1",
   "cas_designer.off_target_search.target_sequence": "GAGTCCGAGCAGAAGAAGAAGGG",
   "cas_designer.off_target_search.genome": "gs://genomics-public-data/references/hg19",

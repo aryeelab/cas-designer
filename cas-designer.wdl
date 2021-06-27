@@ -13,7 +13,7 @@ workflow cas_designer {
 
 
 task off_target_search {
-  String image_id
+  String target_id
   String target_name
   String genome
   String target_sequence
@@ -23,9 +23,8 @@ task off_target_search {
   Int num_mismatches
   Int dna_bulge_size
   Int rna_bulge_size
+  String image_id
   
-  String prefix = target_name + '_' + num_mismatches + '_' + dna_bulge_size + '_' + rna_bulge_size 
-
   command <<<
     # Output GPU info
     nvidia-smi > nvidia-smi.txt
@@ -49,10 +48,10 @@ task off_target_search {
     echo ${num_mismatches} >> input.txt
     echo ${dna_bulge_size} >> input.txt
     echo ${rna_bulge_size} >> input.txt
-    mv input.txt ${prefix}.txt
+    mv input.txt ${target_id}.txt
 
     # Call cas-designer
-    cas-designer ${prefix}.txt
+    cas-designer ${target_id}.txt
     
     # List output files
     ls      
@@ -68,12 +67,12 @@ task off_target_search {
   
   output {
      File target_fasta = "${target_name}.fa"
-     File input_file = "${prefix}.txt"
-     File offtargets = "${prefix}-offtargets.txt"
-     File mich_patterns = "${prefix}-mich_patterns.txt" 
-     File dna_bulges = "${prefix}-dna_bulges.txt"
-     File rna_bulges = "${prefix}-rna_bulges.txt"
-     File summary = "${prefix}-summary.txt"
+     File input_file = "${target_id}.txt"
+     File offtargets = "${target_id}-offtargets.txt"
+     File mich_patterns = "${target_id}-mich_patterns.txt" 
+     File dna_bulges = "${target_id}-dna_bulges.txt"
+     File rna_bulges = "${target_id}-rna_bulges.txt"
+     File summary = "${target_id}-summary.txt"
      File gpu_info = "nvidia-smi.txt"
   }
 }

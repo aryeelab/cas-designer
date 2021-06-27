@@ -28,10 +28,10 @@ docker build -t gcr.io/aryeelab/cas-designer .
 
 ## WDL
 
-java -Dconfig.file=cromwell-gcp.conf -jar /usr/local/Cellar/cromwell/65/libexec/cromwell.jar run -o cromwell-gcp-options.conf cas-designer.wdl
+# With options (for monitoring)
+java -Dconfig.file=cromwell-gcp.conf -jar /usr/local/Cellar/cromwell/65/libexec/cromwell.jar run -o cromwell-gcp-options.conf -i CD_EMX1_2_1_1.json cas-designer.wdl
 
-java -Dconfig.file=cromwell-gcp.conf -jar /usr/local/Cellar/cromwell/65/libexec/cromwell.jar run cas-designer.wdl
-
+# Assuming the monitoring option is in the main conf file. (Does not work?)
 java -Dconfig.file=cromwell-gcp.conf -jar /usr/local/Cellar/cromwell/65/libexec/cromwell.jar run -i CD_EMX1_2_1_1.json cas-designer.wdl
 
 

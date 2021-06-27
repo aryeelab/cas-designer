@@ -1,6 +1,6 @@
 workflow cas_designer {
   
-  String version = "dev"
+  String version = "v0.8"
   
   # dev pipeline versions have the 'latest' image tag.
 	# release pipeline versions correspond to images tagged with the version number

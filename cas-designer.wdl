@@ -59,7 +59,7 @@ task off_target_search {
   
   runtime {
       docker: "gcr.io/joung-pipelines/cas-designer"
-      memory: "30G"
+      memory: "4G"
       gpuType: "nvidia-tesla-v100"
       gpuCount: 1
       zones: ["us-central1-a"]

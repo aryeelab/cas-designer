@@ -1,11 +1,11 @@
 {
-  "w.cas_designer.target_name": "EMX1",
-  "w.cas_designer.target_sequence": "GAGTCCGAGCAGAAGAAGAAGGG",
-  "w.cas_designer.genome": "gs://genomics-public-data/references/hg19",
-  "w.cas_designer.target_length": "20",
-  "w.cas_designer.pam": "GGG",
-  "w.cas_designer.pam_target": "NNN",
-  "w.cas_designer.num_mismatches": "2",
-  "w.cas_designer.dna_bulge_size": "1",
-  "w.cas_designer.rna_bulge_size": "1"
+  "cas_designer.off_target_search.target_name": "EMX1",
+  "cas_designer.off_target_search.target_sequence": "GAGTCCGAGCAGAAGAAGAAGGG",
+  "cas_designer.off_target_search.genome": "gs://genomics-public-data/references/hg19",
+  "cas_designer.off_target_search.target_length": "20",
+  "cas_designer.off_target_search.pam": "GGG",
+  "cas_designer.off_target_search.pam_target": "NNN",
+  "cas_designer.off_target_search.num_mismatches": "2",
+  "cas_designer.off_target_search.dna_bulge_size": "1",
+  "cas_designer.off_target_search.rna_bulge_size": "1"
 }

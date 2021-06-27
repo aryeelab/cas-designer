@@ -8,6 +8,7 @@ workflow cas_designer {
   String image_id = if version=="dev" then "latest" else version
   
   call off_target_search {input:  image_id = image_id}
+  call version_info {input: version = version, image_id = image_id}
 }
 
 
@@ -77,3 +78,18 @@ task off_target_search {
   }
 }
 
+task version_info {
+	String version
+	String image_id
+	command <<<
+		cat /VERSION
+	>>>
+	runtime {
+            docker: "gcr.io/joung-pipelines/cas-designer"
+            cpu: 1
+            memory: "1GB"
+  }
+	output {
+	    String pipeline_version = read_string(stdout())
+  }
+}

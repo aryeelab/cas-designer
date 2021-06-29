@@ -62,7 +62,6 @@ task off_target_search {
       memory: "4G"
       gpuType: "nvidia-tesla-v100"
       gpuCount: 1
-      zones: ["us-central1-a"]
   }
   
   output {

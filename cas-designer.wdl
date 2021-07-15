@@ -59,7 +59,8 @@ task off_target_search {
   
   runtime {
       docker: "gcr.io/joung-pipelines/cas-designer"
-      memory: "4G"
+      cpu: 8
+      memory: "30G"
       gpuType: "nvidia-tesla-v100"
       gpuCount: 1
   }
@@ -85,7 +86,6 @@ task version_info {
 	runtime {
             docker: "gcr.io/joung-pipelines/cas-designer"
             cpu: 1
-            memory: "1GB"
   }
 	output {
 	    String pipeline_version = read_string(stdout())

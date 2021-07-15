@@ -84,8 +84,8 @@ task version_info {
 	>>>
 	runtime {
             docker: "gcr.io/joung-pipelines/cas-designer"
-            cpu: 1
-            memory: "1GB"
+            cpu: 8
+            memory: "30GB"
   }
 	output {
 	    String pipeline_version = read_string(stdout())

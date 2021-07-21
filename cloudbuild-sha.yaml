@@ -1,8 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/joung-pipelines/cas-designer:$SHORT_SHA', '-t', 'gcr.io/joung-pipelines/cas-designer:latest', '--build-arg', 'VERSION=$SHORT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/aryeelab/cas-designer:$SHORT_SHA', '-t', 'gcr.io/aryeelab/cas-designer:latest', '--build-arg', 'VERSION=$SHORT_SHA', '.']
 
 images: 
-- 'gcr.io/joung-pipelines/cas-designer'
+- 'gcr.io/aryeelab/cas-designer'
 
 timeout: 3600s

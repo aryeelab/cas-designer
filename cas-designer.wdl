@@ -63,6 +63,7 @@ task off_target_search {
       memory: "30G"
       gpuType: "nvidia-tesla-v100"
       gpuCount: 1
+      preemptible: 1
   }
   
   output {

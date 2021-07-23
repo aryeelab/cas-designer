@@ -1,6 +1,6 @@
 workflow cas_designer {
   
-  String version = "v0.8.2"
+  String version = "v0.8.3"
   
   # dev pipeline versions have the 'latest' image tag.
 	# release pipeline versions correspond to images tagged with the version number
@@ -59,10 +59,11 @@ task off_target_search {
   
   runtime {
       docker: "gcr.io/joung-pipelines/cas-designer"
-      memory: "4G"
+      cpu: 8
+      memory: "30G"
       gpuType: "nvidia-tesla-v100"
       gpuCount: 1
-      zones: ["us-central1-a"]
+      preemptible: 1
   }
   
   output {
@@ -86,7 +87,6 @@ task version_info {
 	runtime {
             docker: "gcr.io/joung-pipelines/cas-designer"
             cpu: 1
-            memory: "1GB"
   }
 	output {
 	    String pipeline_version = read_string(stdout())

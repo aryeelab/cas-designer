@@ -1,3 +1,37 @@
+#################
+# ERIXdxl setup #
+#################
+ssh ma695@erisxdl.partners.org
+
+cd xdl
+
+
+
+# Conda
+
+module load Anaconda3
+conda create -n cas-designer python=3.8
+conda activate cas-designer
+conda install cuda
+
+# Podman
+
+podman pull nvidia/cuda:11.0-base
+podman pull nvcr.io/nvidia/opencl:runtime-ubuntu18.04
+podman pull gcr.io/aryeelab/cas-designer
+podman images 
+
+podman run --rm -it gcr.io/aryeelab/cas-designer /bin/bash
+
+podman run --rm -it nvcr.io/nvidia/cuda:11.0-base nvidia-smi
+
+
+podman run --rm -it nvidia/opencl:runtime-ubuntu18.04 /bin/bash
+
+
+
+
+
 ###################
 # Set up GCP host #
 ###################
@@ -35,32 +69,6 @@ java -Dconfig.file=cromwell-gcp.conf -jar /usr/local/Cellar/cromwell/65/libexec/
 java -Dconfig.file=cromwell-gcp.conf -jar /usr/local/Cellar/cromwell/65/libexec/cromwell.jar run -i CD_EMX1_2_1_1.json cas-designer.wdl
 
 
-#################
-# ERIXdxl setup #
-#################
-ssh ma695@erisxdl.partners.org
-
-
-# Conda
-
-module load Anaconda3
-conda create -n cas-designer python=3.8
-conda activate cas-designer
-conda install cuda
-
-# Podman
-
-podman pull nvidia/cuda:11.0-base
-podman pull nvcr.io/nvidia/opencl:runtime-ubuntu18.04
-podman pull gcr.io/aryeelab/cas-designer
-podman images 
-
-podman run --rm -it gcr.io/aryeelab/cas-designer /bin/bash
-
-podman run --rm -it nvcr.io/nvidia/cuda:11.0-base nvidia-smi
-
-
-podman run --rm -it nvidia/opencl:runtime-ubuntu18.04 /bin/bash
 
 
 
